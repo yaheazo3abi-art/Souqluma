@@ -1,1 +1,133 @@
 # Souqluma
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SouqLuma | سوق لوما</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#101010;color:#fff}
+header{background:#080808;padding:22px 15px;text-align:center;border-bottom:1px solid #b89545}
+.logo{font-size:32px;font-weight:bold;color:#d6b45c;letter-spacing:2px}
+nav{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;padding:15px}
+nav a{color:white;text-decoration:none}
+button{cursor:pointer;border:0;border-radius:7px;padding:11px 17px;font-weight:bold}
+.gold{background:#c9a64b;color:#111}
+.hero{text-align:center;padding:65px 15px;background:linear-gradient(130deg,#191919,#30250e)}
+.hero h1{font-size:34px;color:#e0bd63}
+.hero p{color:#ddd;line-height:1.8}
+section{padding:30px 16px;max-width:1100px;margin:auto}
+h2{text-align:center;color:#d6b45c;margin-bottom:25px}
+.categories,.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:15px}
+.category,.product{background:#1d1d1d;border:1px solid #554522;border-radius:12px;padding:20px;text-align:center}
+.category{font-size:18px;color:#e2c36c}
+.product .photo{font-size:48px;padding:15px}
+.product h3{color:#e2c36c}
+.product p{color:#bbb}
+.product a{display:inline-block;margin-top:10px;text-decoration:none}
+footer{text-align:center;background:#080808;padding:25px;color:#aaa;margin-top:30px}
+#language{position:absolute;left:15px;top:20px}
+</style>
+</head>
+<body>
+
+<header>
+<button id="language" class="gold" onclick="changeLanguage()">English</button>
+<div class="logo">SouqLuma</div>
+<p id="tagline">أناقة الاختيار، وروعة التسوق</p>
+<nav>
+<a href="#home" id="homeLink">الرئيسية</a>
+<a href="#categories" id="catLink">الأقسام</a>
+<a href="#products" id="prodLink">المنتجات</a>
+<a href="#contact" id="contactLink">اتصل بنا</a>
+</nav>
+</header>
+
+<div class="hero" id="home">
+<h1 id="welcome">مرحبا بكم في SouqLuma</h1>
+<p id="intro">اكتشفوا منتجات متنوعة تجمع بين الجودة والأناقة</p>
+<a href="#products"><button class="gold" id="shopBtn">تسوق الآن</button></a>
+</div>
+
+<section id="categories">
+<h2 id="catTitle">تسوق حسب الأقسام</h2>
+<div class="categories">
+<div class="category">📱 <span id="c1">الإلكترونيات</span></div>
+<div class="category">👕 <span id="c2">الملابس</span></div>
+<div class="category">🌸 <span id="c3">العطور والجمال</span></div>
+<div class="category">🏠 <span id="c4">المنزل</span></div>
+<div class="category">⌚ <span id="c5">الإكسسوارات</span></div>
+<div class="category">🎁 <span id="c6">منتجات متنوعة</span></div>
+</div>
+</section>
+
+<section id="products">
+<h2 id="productsTitle">منتجاتنا</h2>
+<div class="products">
+<div class="product">
+<div class="photo">📱</div>
+<h3 id="p1">منتج إلكتروني</h3>
+<p id="d1">أضف وصف المنتج والثمن هنا</p>
+<a href="https://wa.me/212603290434?text=السلام%20عليكم،%20أريد%20طلب%20منتج" target="_blank"><button class="gold" id="order1">اطلب عبر واتساب</button></a>
+</div>
+<div class="product">
+<div class="photo">👟</div>
+<h3 id="p2">منتج الموضة</h3>
+<p id="d2">أضف وصف المنتج والثمن هنا</p>
+<a href="https://wa.me/212603290434?text=السلام%20عليكم،%20أريد%20طلب%20منتج" target="_blank"><button class="gold" id="order2">اطلب عبر واتساب</button></a>
+</div>
+<div class="product">
+<div class="photo">🌸</div>
+<h3 id="p3">منتج الجمال</h3>
+<p id="d3">أضف وصف المنتج والثمن هنا</p>
+<a href="https://wa.me/212603290434?text=السلام%20عليكم،%20أريد%20طلب%20منتج" target="_blank"><button class="gold" id="order3">اطلب عبر واتساب</button></a>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<h2 id="contactTitle">تواصل معنا</h2>
+<p style="text-align:center" id="contactText">للطلب والاستفسار تواصل معنا عبر واتساب</p>
+<div style="text-align:center">
+<a href="https://wa.me/212603290434" target="_blank"><button class="gold">WhatsApp</button></a>
+</div>
+</section>
+
+<footer>© 2026 SouqLuma - All Rights Reserved</footer>
+
+<script>
+let english=false;
+function changeLanguage(){
+english=!english;
+document.documentElement.lang=english?"en":"ar";
+document.documentElement.dir=english?"ltr":"rtl";
+const values={
+tagline:["أناقة الاختيار، وروعة التسوق","Style of choice, joy of shopping"],
+homeLink:["الرئيسية","Home"],catLink:["الأقسام","Categories"],
+prodLink:["المنتجات","Products"],contactLink:["اتصل بنا","Contact"],
+welcome:["مرحبا بكم في SouqLuma","Welcome to SouqLuma"],
+intro:["اكتشفوا منتجات متنوعة تجمع بين الجودة والأناقة","Discover products that combine quality and style"],
+shopBtn:["تسوق الآن","Shop Now"],catTitle:["تسوق حسب الأقسام","Shop by Category"],
+c1:["الإلكترونيات","Electronics"],c2:["الملابس","Fashion"],
+c3:["العطور والجمال","Beauty"],c4:["المنزل","Home"],
+c5:["الإكسسوارات","Accessories"],c6:["منتجات متنوعة","More Products"],
+productsTitle:["منتجاتنا","Our Products"],
+p1:["منتج إلكتروني","Electronic Product"],p2:["منتج الموضة","Fashion Product"],
+p3:["منتج الجمال","Beauty Product"],
+d1:["أضف وصف المنتج والثمن هنا","Add product description and price here"],
+d2:["أضف وصف المنتج والثمن هنا","Add product description and price here"],
+d3:["أضف وصف المنتج والثمن هنا","Add product description and price here"],
+order1:["اطلب عبر واتساب","Order on WhatsApp"],
+order2:["اطلب عبر واتساب","Order on WhatsApp"],
+order3:["اطلب عبر واتساب","Order on WhatsApp"],
+contactTitle:["تواصل معنا","Contact Us"],
+contactText:["للطلب والاستفسار تواصل معنا عبر واتساب","For orders and questions contact us on WhatsApp"]
+};
+for(const id in values)document.getElementById(id).textContent=values[id][english?1:0];
+document.getElementById("language").textContent=english?"العربية":"English";
+}
+</script>
+</body>
+</html>
